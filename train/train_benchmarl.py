@@ -40,7 +40,6 @@ def main():
         0.95,         # lmbda (GAE)
         "affine",     # scale_mapping
         False,        # use_tanh_normal
-        True,         # minibatch_advantage
     )
 
     # Build train kwargs, but only pass what this version supports
