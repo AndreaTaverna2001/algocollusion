@@ -27,8 +27,20 @@ class TrainCfg:
     seed: int = 0
     logdir: str = "runs/ippo_calvano"
 
-def main():
-    cfg = TrainCfg()
+
+def train(cfg: TrainCfg | None = None) -> Ippo:
+    """Run IPPO training with the provided configuration.
+
+    Parameters
+    ----------
+    cfg:
+        Optional training configuration.  When ``None`` the default
+        :class:`TrainCfg` values are used.  Returning the algorithm object
+        allows callers (including tests) to further inspect the trained model
+        without having to rerun the training script via ``__main__``.
+    """
+
+    cfg = cfg or TrainCfg()
     os.makedirs(cfg.logdir, exist_ok=True)
     print(f"Logging to {cfg.logdir}")
 
@@ -94,6 +106,11 @@ def main():
             print("Saved checkpoints to", ckpt)
         except Exception as e:
             print("Save skipped:", e)
+
+    return algo
+
+def main():
+    train()
 
 if __name__ == "__main__":
     main()
