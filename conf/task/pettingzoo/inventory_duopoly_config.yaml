@@ -1,0 +1,14 @@
+# @package _global_
+# Minimal PettingZoo task pointing at your custom env
+
+task:
+  backend: pettingzoo
+  scenario: my_envs.inventory_duopoly_pz   # <-- module path (no .py)
+  entrypoint: parallel_env                  # <-- function in that module
+  kwargs:
+    T: 20
+    I_per_period: 440
+    lam: 1000
+    c: 1.0
+    alpha_i: 2.0
+    alpha0: 0.0
