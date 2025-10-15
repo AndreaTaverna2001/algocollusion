@@ -1,0 +1,21 @@
+algorithm:
+  share_param_critic: ???
+  clip_epsilon: ???
+  entropy_coef: ???
+  critic_coef: ???
+  loss_critic_type: ???
+  lmbda: ???
+  scale_mapping: ???
+  use_tanh_normal: ???
+  minibatch_advantage: ???
+task:
+  backend: pettingzoo
+  scenario: my_envs.inventory_duopoly_pz
+  entrypoint: parallel_env
+  kwargs:
+    T: 20
+    I_per_period: 440
+    lam: 1000
+    c: 1.0
+    alpha_i: 2.0
+    alpha0: 0.0
