@@ -1,4 +1,5 @@
+# @package _global_
+
 defaults:
-  - algorithm: ippo
-  - task: pettingzoo/inventory_duopoly_config
-  - _self_
+  - override /algorithm: ippo
+  - override /task: pettingzoo/inventory_duopoly_config
