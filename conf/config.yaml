@@ -19,6 +19,7 @@ experiment:
   gamma: 0.99
   lr: 5.0e-05
   adam_eps: 1.0e-06
+  adam_extra_kwargs: {}
   clip_grad_norm: true
   clip_grad_val: 5.0
   soft_target_update: true
@@ -49,14 +50,15 @@ experiment:
 
   # Evaluation and Logging
   evaluation: true
-  render: false # Set to true for visualization
+  render: false
   evaluation_interval: 120000
   evaluation_episodes: 10
   evaluation_deterministic_actions: true
   evaluation_static: false
   loggers:
     - csv
-    - wandb # Remove if you don't use Weights & Biases
+    - wandb
+  wandb_extra_kwargs: {} # <-- THE FINAL MISSING LINE
   project_name: benchmarl
   create_json: true
   save_folder: null
