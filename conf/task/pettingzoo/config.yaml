@@ -1,0 +1,4 @@
+defaults:
+  - algorithm: ippo
+  - task: pettingzoo/inventory_duopoly_config
+  - _self_
